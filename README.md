@@ -18,7 +18,7 @@
 3. 3월 - DB연동 및 배포
 
 • 레퍼런스
-1. ionic 3 [https://www.youtube.com/watch?v=qs2n_poLarc&t=2271s]
+1. ionic 3 API [[Youtube](https://www.youtube.com/watch?v=qs2n_poLarc&t=2271s)]
 2. ionic 3 [https://www.youtube.com/watch?v=PNzE1MX5iRU&t=1035s]
 3. Django [https://www.youtube.com/watch?v=yDv5FIAeyoY&t=15014s]
 3. Django rest API [https://www.youtube.com/watch?v=tG6O8YF91HE&t=1960s]
