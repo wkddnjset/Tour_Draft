@@ -9,14 +9,32 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class ApitestProvider {
-  api_id;
   url;
 
   constructor(public http: HttpClient) {
     console.log('Hello ApitestProvider Provider');
-    this.url = 'http://localhost:8000/api/test/1/'
+    this.url = 'http://localhost:8000/api/test/'
   }
-  getApi(api_id){
-  	return this.http.get(this.url+'?format=json')
+  getApi(pk){
+  	return this.http.get('img/'+this.url+pk+'/?format=json')
+  }
+  postSignup(username, email, password){
+    return this.http.post(this.url+'signup/',
+      { "username":username, "email":email, "password":password},
+      { headers: { 'Content-Type': 'application/json' } }
+      )
+  }
+  postToken(username, password){
+    return this.http.post( this.url+'auth/token/',
+      { "username":username, "password":password},
+      { headers: { 'Content-Type': 'application/json' } }
+      )
+  }
+  getImage(pk, token){
+    return this.http.get(this.url+'img/'+pk+'/?format=json', 
+      {headers:{
+        'Content-Type': 'application/json',
+        'Authorization': 'JWT ' + token }
+      })
   }
 }

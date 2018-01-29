@@ -10,3 +10,10 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return str(self.user)
+
+class image(models.Model):
+    title = models.CharField(max_length=100)
+    photo = models.ImageField(blank=True)
+
+    def __str__(self):
+        return str(self.title)

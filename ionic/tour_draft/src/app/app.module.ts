@@ -5,6 +5,9 @@ import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
+import { WelcomePage } from '../pages/welcome/welcome';
+import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
@@ -17,6 +20,9 @@ import { ApitestProvider } from '../providers/apitest/apitest';
 @NgModule({
   declarations: [
     MyApp,
+    WelcomePage,
+    LoginPage,
+    SignupPage,
     AboutPage,
     ContactPage,
     HomePage,
@@ -31,6 +37,9 @@ import { ApitestProvider } from '../providers/apitest/apitest';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    WelcomePage,
+    LoginPage,
+    SignupPage,
     AboutPage,
     ContactPage,
     HomePage,

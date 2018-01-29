@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { ApitestProvider } from '../../providers/apitest/apitest';
 
 @Component({
@@ -7,16 +7,25 @@ import { ApitestProvider } from '../../providers/apitest/apitest';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  api_id : any;
+  image:any;
+  pk : string;
+  token:any;
 
-  constructor(public navCtrl: NavController, private apitest : ApitestProvider) {
-
+  constructor(
+    public navCtrl: NavController, 
+    private navPar: NavParams,
+    private apitest : ApitestProvider) {
   }
-    ionViewWillEnter(){
-    	this.api_id = '1'
-    	this.apitest.getApi(this.api_id).subscribe(api => {
-    		console.log(api);
-    	});
-    }
-
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad HomePage');
+    this.token =  this.navPar.data.token;
+    console.log(this.token);
+  }
+  ionViewWillEnter(){
+    this.pk = "1";
+  	this.apitest.getImage(this.pk, this.token).subscribe(api => {
+      console.log(api);
+      this.image = api;
+  	});
+  }
 }
