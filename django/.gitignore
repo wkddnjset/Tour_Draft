@@ -6,5 +6,8 @@ Scripts/
 tcl/
 Lib/
 include/
+src/manage.py
+src/api/
+src/Tour/
 
 pip-selfcheck.json
