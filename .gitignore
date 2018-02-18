@@ -1,0 +1,6 @@
+django/.idea/
+django/Scripts/
+django/tcl/
+django/Lib/
+django/include/
+django/pip-selfcheck.json
