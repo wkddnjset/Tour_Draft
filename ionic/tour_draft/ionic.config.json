@@ -1,8 +1,0 @@
-{
-  "name": "tour_draft",
-  "app_id": "",
-  "type": "ionic-angular",
-  "integrations": {
-    "cordova": {}
-  }
-}
