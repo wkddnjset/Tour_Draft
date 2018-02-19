@@ -8,9 +8,16 @@
 • 역할
 1. 김지유 - 디자인 & 기획
 2. 송민지 - 퍼블리싱
+<<<<<<< HEAD
 3. 서장원 - 백엔드 & 프런트엔드
 4. 이재연 - 백엔드 & 프런트엔드
 5. 천재용 - 백엔드 & 프런트엔드
+=======
+3. 서장원 - 개발
+4. 유지현 - 개발
+5. 이재연 - 개발
+6. 천재용 - 개발
+>>>>>>> 075c2970fc2d84acca0d92be4fb3a567c51be3f1
 
 • 개발일정
 1. 1월 - 디자인 기획 완료
@@ -23,3 +30,4 @@
 3. Try Django 1.11 [[Youtube](https://www.youtube.com/watch?v=yDv5FIAeyoY&t=15014s)]
 3. Django rest API [[Youtube](https://www.youtube.com/watch?v=tG6O8YF91HE&t=1960s)]
 4. Sketch [[Youtube](https://www.youtube.com/watch?v=AV2OkzIGykA&list=PLLnpHn493BHE6UIsdKYlS5zu-ZYvx22CS)]
+dkasdm
