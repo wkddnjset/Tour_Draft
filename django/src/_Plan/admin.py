@@ -1,16 +1,7 @@
 from django.contrib import admin
-from .models import Item
-from .models import TimeSlot
-from .models import Address
-from .models import Plan
-from .models import Plan_Item
+from .models import *
 
 # Register your models here.
-class ItemAdmin(admin.ModelAdmin):
-    list_display = ['id']
-
-admin.site.register(Item, ItemAdmin)
-
 class UserAdmin(admin.ModelAdmin):
     list_display = ['id']
 

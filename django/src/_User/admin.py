@@ -1,9 +1,5 @@
 from django.contrib import admin
-from .models import User
-from .models import Pick
-from .models import Category
-from .models import Review
-
+from .models import *
 
 # Register your models here.
 class UserAdmin(admin.ModelAdmin):

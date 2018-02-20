@@ -19,7 +19,7 @@ class User(AbstractUser):
 
 
 class Review(models.Model):
-    item_id = models.ForeignKey('_Plan.Item', related_name="reviews", on_delete=models.CASCADE)
+    item_id = models.ForeignKey('_Item.Item', related_name="reviews", on_delete=models.CASCADE)
     user_id = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="reviews", on_delete=models.CASCADE)
     star_point = models.IntegerField( default=5,
         validators=[
@@ -43,7 +43,7 @@ class Category(models.Model):
 
 
 class Pick(models.Model):
-    item_id = models.ForeignKey('_Plan.Item', related_name = "picks", on_delete=models.CASCADE)
+    item_id = models.ForeignKey('_Item.Item', related_name = "picks", on_delete=models.CASCADE)
     user_id = models.ForeignKey(settings.AUTH_USER_MODEL, related_name = "picks", on_delete=models.CASCADE)
 
     class Meta:
