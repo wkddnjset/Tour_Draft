@@ -6,6 +6,14 @@ django/include/
 django/pip-selfcheck.json
 django/venv
 django/pyvenv.cfg
+django/src/_Item/__pycache__
+django/src/_Item/migrations
+django/src/_Plan/__pycache__
+django/src/_Plan/migrations
+django/src/_User/__pycache__
+django/src/_User/migrations
+django/src/db.sqlite3
+
 .idea
 .gitignore
 README.md
