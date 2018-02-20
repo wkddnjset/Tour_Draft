@@ -51,9 +51,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    '_Item',
+>>>>>>> 77f9ab06c6220164bdd2d072a5a630e38d40069d
     '_Plan',
     '_User',
     'rest_framework',
+
     # for CORS ERROR edited by jy
     'corsheaders',
 

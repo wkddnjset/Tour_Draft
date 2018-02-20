@@ -1,12 +1,15 @@
 from django.db import models
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 class Item(models.Model):
     """"""
 
 class User(models.Model):
     """"""
 
+=======
+>>>>>>> 77f9ab06c6220164bdd2d072a5a630e38d40069d
 class TimeSlot(models.Model):
     start_time       = models.TimeField()
     end_time         = models.TimeField()
@@ -24,7 +27,7 @@ class Address(models.Model):
         return '{} {}'.format(self.location_name, self.address)
 
 class Plan(models.Model):
-    user_id          = models.ForeignKey(User, on_delete=models.CASCADE, primary_key=True)
+    user_id          = models.ForeignKey('_User.User', on_delete=models.CASCADE, primary_key=True)
     plan_name        = models.CharField(max_length=45)
     share_flag       = models.BooleanField()
     start_datetime   = models.DateField(auto_now_add=True)
@@ -36,7 +39,7 @@ class Plan(models.Model):
         return self.plan_name
 
 class Plan_Item(models.Model):
-    item_id          = models.ForeignKey(Item, on_delete=models.CASCADE)
+    item_id          = models.ForeignKey('_Item.Item', on_delete=models.CASCADE)
     itemslot_id      = models.ForeignKey(TimeSlot, on_delete=models.CASCADE)
     day              = models.IntegerField()
 

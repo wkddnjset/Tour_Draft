@@ -1,9 +1,17 @@
 from django.db import models
+<<<<<<< HEAD
 import _Plan
 # Create your models here.
 
 class Item(models.Model):
     category_id     = models.ForeignKey(_Plan.models.Category, on_delete=models.CASCADE)
+=======
+
+# Create your models here.
+
+class Item(models.Model):
+    category_id     = models.ForeignKey('_User.Category', on_delete=models.CASCADE)
+>>>>>>> 77f9ab06c6220164bdd2d072a5a630e38d40069d
     title           = models.CharField(max_length=45)
     subtitle        = models.TextField()
     content         = models.TextField()
