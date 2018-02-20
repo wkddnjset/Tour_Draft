@@ -1,15 +1,5 @@
 from django.db import models
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-class Item(models.Model):
-    """"""
-
-class User(models.Model):
-    """"""
-
-=======
->>>>>>> 77f9ab06c6220164bdd2d072a5a630e38d40069d
 class TimeSlot(models.Model):
     start_time       = models.TimeField()
     end_time         = models.TimeField()
@@ -45,8 +35,3 @@ class Plan_Item(models.Model):
 
     def __str__(self):
         return self.day
-=======
-# Create your models here.
-class Category(models.Model):
-    """"""
->>>>>>> 206a777a6d2c7dacce5d156d933cc8fbe5bfc195
