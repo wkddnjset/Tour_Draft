@@ -1,4 +1,5 @@
 from django.contrib import admin
+<<<<<<< HEAD
 from .models import Item
 from .models import TimeSlot
 from .models import Address
@@ -33,3 +34,7 @@ class Plan_ItemAdmin(admin.ModelAdmin):
     list_display = ('id', 'item_id', 'itemslot_id', 'day')
 
 admin.site.register(Plan_Item, Plan_ItemAdmin)
+=======
+
+# Register your models here.
+>>>>>>> 206a777a6d2c7dacce5d156d933cc8fbe5bfc195

@@ -12,6 +12,7 @@
 4. 이재연 - 백엔드 & 프런트엔드
 5. 천재용 - 백엔드 & 프런트엔드
 
+
 • 개발일정
 1. 1월 - 디자인 기획 완료
 2. 2월 - 프런트 개발 및 API 제작
@@ -23,3 +24,4 @@
 3. Try Django 1.11 [[Youtube](https://www.youtube.com/watch?v=yDv5FIAeyoY&t=15014s)]
 3. Django rest API [[Youtube](https://www.youtube.com/watch?v=tG6O8YF91HE&t=1960s)]
 4. Sketch [[Youtube](https://www.youtube.com/watch?v=AV2OkzIGykA&list=PLLnpHn493BHE6UIsdKYlS5zu-ZYvx22CS)]
+dkasdm
