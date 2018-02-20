@@ -4,3 +4,8 @@ django/tcl/
 django/Lib/
 django/include/
 django/pip-selfcheck.json
+django/venv
+django/pyvenv.cfg
+.idea
+.gitignore
+README.md
