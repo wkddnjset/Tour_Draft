@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 django/.idea/
 django/Scripts/
 django/tcl/
@@ -9,3 +10,11 @@ django/pyvenv.cfg
 .idea
 .gitignore
 README.md
+=======
+.idea/
+django/bin/
+django/include/
+django/lib/
+django/pyvenv.cfg/
+django/pip-selfcheck.json/
+>>>>>>> make models (Plan)

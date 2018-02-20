@@ -46,7 +46,6 @@ INSTALLED_APPS = [
 
     # for CORS ERROR edited by jy
     'corsheaders',
-
 ]
 
 MIDDLEWARE = [
