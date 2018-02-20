@@ -6,8 +6,13 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 class User(AbstractUser):
+    GENDER = (
+        ('M', 'Male'),
+        ('F', 'Female'),
+    )
+
     age = models.IntegerField(null=True)
-    sex = models.CharField(max_length=1, null=True) # m 이면 남, f이면 여
+    sex = models.CharField(max_length=1, null=True, choices=GENDER, default = 'M') # m 이면 남, f이면 여
 
     def __str__(self):
         return str(self.username)
