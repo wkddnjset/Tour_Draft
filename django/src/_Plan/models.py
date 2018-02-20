@@ -17,7 +17,7 @@ class Address(models.Model):
         return '{} {}'.format(self.location_name, self.address)
 
 class Plan(models.Model):
-    user_id          = models.ForeignKey('_User.User', on_delete=models.CASCADE, primary_key=True)
+    user_id          = models.OneToOneField('_User.User', on_delete=models.CASCADE)
     plan_name        = models.CharField(max_length=45)
     share_flag       = models.BooleanField()
     start_datetime   = models.DateField(auto_now_add=True)
