@@ -39,8 +39,7 @@ class Category(models.Model):
     name = models.CharField(max_length = 20)
 
     def __str__(self):
-        return str(self.name)
-
+        return str('%d: %s' % (self.id, self.name))
 
 class Pick(models.Model):
     item_id = models.ForeignKey('_Item.Item', related_name = "picks", on_delete=models.CASCADE)

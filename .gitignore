@@ -14,6 +14,7 @@ django/src/_User/__pycache__
 django/src/_User/migrations
 django/src/db.sqlite3
 
+resource/
 .idea
 .gitignore
 README.md

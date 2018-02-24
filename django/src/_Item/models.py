@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Item(models.Model):
-    category_id     = models.ForeignKey('_User.Category', on_delete=models.CASCADE)
+    category_id     = models.ForeignKey('_User.Category', related_name='tags', on_delete=models.CASCADE)
     title           = models.CharField(max_length=45)
     subtitle        = models.TextField()
     content         = models.TextField()
@@ -21,6 +21,8 @@ class Item(models.Model):
     def __str__(self):
         return str(self.title)
 
+
+
 class Tag(models.Model):
     tag_name    = models.CharField(max_length=20)
 
@@ -36,3 +38,4 @@ class Item_Tag(models.Model):
 
     def __str__(self):
         return str(self.id)
+
