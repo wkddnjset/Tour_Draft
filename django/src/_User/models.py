@@ -32,7 +32,7 @@ class Review(models.Model):
         unique_together = ('item_id', 'user_id')
 
     def __str__(self):
-        return str(self.user_id)
+        return str(self.comment)
 
 
 class Category(models.Model):
