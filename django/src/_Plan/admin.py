@@ -16,7 +16,7 @@ class AddressAdmin(admin.ModelAdmin):
 admin.site.register(Address, AddressAdmin)
 
 class PlanAdmin(admin.ModelAdmin):
-    list_display = ('plan_name', 'share_flag', 'start_datetime', 'start_address_id', 'end_datetime', 'end_address_id')
+    list_display = ('id', 'plan_name', 'share_flag', 'start_datetime', 'start_address_id', 'end_datetime', 'end_address_id')
 
 admin.site.register(Plan, PlanAdmin)
 
