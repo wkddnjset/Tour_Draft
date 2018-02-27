@@ -21,6 +21,6 @@ class PlanAdmin(admin.ModelAdmin):
 admin.site.register(Plan, PlanAdmin)
 
 class Plan_ItemAdmin(admin.ModelAdmin):
-    list_display = ('id', 'item_id', 'itemslot_id', 'day')
+    list_display = ('id', 'item_id', 'timeslot_id', 'day')
 
 admin.site.register(Plan_Item, Plan_ItemAdmin)

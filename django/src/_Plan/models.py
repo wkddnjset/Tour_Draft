@@ -17,7 +17,7 @@ class Address(models.Model):
         return '{} {}'.format(self.location_name, self.address)
 
 class Plan(models.Model):
-    user_id          = models.ForeignKey('_User.User', on_delete=models.CASCADE, primary_key=True)
+    user_id          = models.ForeignKey('_User.User', on_delete=models.CASCADE)
     plan_name        = models.CharField(max_length=45)
     share_flag       = models.BooleanField()
     start_datetime   = models.DateField(auto_now_add=True)
@@ -29,8 +29,9 @@ class Plan(models.Model):
         return self.plan_name
 
 class Plan_Item(models.Model):
+    plan_id          = models.ForeignKey('Plan', on_delete=models.CASCADE)
     item_id          = models.ForeignKey('_Item.Item', on_delete=models.CASCADE)
-    itemslot_id      = models.ForeignKey(TimeSlot, on_delete=models.CASCADE)
+    timeslot_id      = models.ForeignKey('TimeSlot', on_delete=models.CASCADE)
     day              = models.IntegerField()
 
     def __str__(self):
