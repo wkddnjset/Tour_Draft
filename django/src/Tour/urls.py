@@ -13,11 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+# for image schema by jy
+from django.conf import settings
+from django.conf.urls.static import static
+
+# original imports
 from django.conf.urls import url,include
 from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     #url(r'^api/', include('_Plan.api.urls', namespace='Plan_api')),
     url(r'^api/', include('_User.api.urls', namespace='User_api')),
+    url(r'^api/', include('_Item.api.urls', namespace='Item_api')),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

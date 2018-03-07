@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <div id="meun-button">
+      <ion-buttons>
+        <button ion-button icon-only menuToggle>
+          <ion-icon name="menu-icon"></ion-icon>
+        </button>
+      </ion-buttons>
+    </div>
+    <div id="search-bar">
+      <ion-searchbar [@mysearchbar]='visibleState' showCancelButton="True" placeholder="검색" animated="True">
+        
+      </ion-searchbar>
+    </div>
+    <div id="search-button">
+      <ion-buttons>
+        <button *ngIf="visibleState == 'invisible'" (click)="toggleVisible()" ion-button icon-only>
+          <ion-icon name='search-icon'></ion-icon>
+        </button>
+        <button *ngIf="visibleState == 'visible'" (click)="toggleVisible()" ion-button icon-only>
+          <ion-icon name='close'></ion-icon>
+        </button>
+      </ion-buttons>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- <button ion-button secondary menuToggle>Toggle Menu</button> -->
+  <ion-tabs>
+    <ion-tab [root]="tab1Root" tabTitle="item one" tabIcon="icon-icon-off"></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="item two" tabIcon="icon-icon-off"></ion-tab>
+    <ion-tab [root]="tab3Root" tabTitle="item three" tabIcon="icon-icon-off"></ion-tab>
+  </ion-tabs>
+</ion-content>

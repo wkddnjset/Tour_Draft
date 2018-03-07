@@ -1,0 +1,63 @@
+<ion-header no-border>
+  <ion-navbar id="sort-nav">
+  	<div id="dropdown-head">
+  		<div class="dropdown-title" *ngIf= "selectedData">{{ selectedData }}</div>
+  		<div class="dropdown-title" *ngIf= "!selectedData">DESTINATION</div>
+  		<div class="dropdown-icon">
+	  		<ion-buttons>
+			  	<button ion-button icon-only (click)="presentPopover($event)">
+				  <ion-icon name="dropdown-icon"></ion-icon>
+				</button>
+			</ion-buttons>
+		</div>
+  	</div>
+  	<div id="sort-head">
+	  	<ion-buttons right>
+		  	<button ion-button icon-only (click)="presentPopover($event)">
+			  <ion-icon name="sort-icon"></ion-icon>
+			</button>
+		</ion-buttons>
+	</div>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+<!-- <ion-slides>
+
+  <ion-slide class="slide-background">
+    <img class="slide-img" src="assets/icon/producr-img.png">
+    <div class="slide-card">
+      <h2 class="slide-title">Seoul, Korea</h2>
+      <p class="slide-subtitle">The National Palace Museum of Korea is 
+located south of Heungnyemun Gate.</p>
+      <button class="tag-icon">
+          <ion-icon name="tag-icon"></ion-icon>
+      </button>
+    </div>
+  </ion-slide>
+  <ion-slide class="slide-background">
+    <img class="slide-img" src="assets/icon/producr-img.png">
+    <div class="slide-card">
+      <h2 class="slide-title">Seoul, Korea</h2>
+      <p class="slide-subtitle">The National Palace Museum of Korea is 
+located south of Heungnyemun Gate.</p>
+      <button class="tag-icon">
+          <ion-icon name="tag-icon"></ion-icon>
+      </button>
+    </div>
+  </ion-slide>
+
+</ion-slides> -->
+
+<ion-slides >
+  <ion-slide class="slide-background"  *ngFor = "let product of data">
+    <img class="slide-img" src="{{ product.main_img }}">
+    <div class="slide-card">
+      <h2 class="slide-title">{{ product.title }}</h2>
+      <p class="slide-subtitle">{{ product.subtitle }}</p>
+      <button class="tag-icon">
+          <ion-icon name="tag-icon"></ion-icon>
+      </button>
+    </div>
+  </ion-slide>
+</ion-slides> 
+</ion-content>

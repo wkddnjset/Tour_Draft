@@ -21,6 +21,8 @@ class Item(models.Model):
     def __str__(self):
         return str(self.title)
 
+
+
 class Tag(models.Model):
     tag_name    = models.CharField(max_length=20)
 
@@ -36,3 +38,4 @@ class Item_Tag(models.Model):
 
     def __str__(self):
         return str(self.id)
+

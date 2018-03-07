@@ -26,7 +26,7 @@ class UserCreateView(generics.ListCreateAPIView):
     serializer_class = UserSerializer
 
 
-# 카테 조회 api (생성은 디비에서만 조회가 필요할경우가 있을까봐... 조회만 일단만듦)
+# 카테고리 조회 api (생성은 디비에서만 하기로함. but 혹시 조회가 필요할경우가 있을까봐... 조회만 일단만듦)
 class CateDetailView(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = 'id'
     serializer_class = CateSerializer
@@ -142,12 +142,3 @@ class UserPickDetailView(APIView):
 
         else:
             return Response({'is_pick': False})
-'''
-    def get_queryset(self, *args, **kwargs):
-        item_id=self.kwargs['item_id']
-        query_set = Pick.objects.filter(item_id=item_id)
-
-        if query_set.exists():
-            return Response(True)
-        else:
-            return Response(False)'''
