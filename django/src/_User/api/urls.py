@@ -34,5 +34,7 @@ urlpatterns = [
     url(r'^users/(?P<user_id>\d+)/picks/$', UserPickListView.as_view(), name='user_picks'),
     url(r'^users/(?P<user_id>\d+)/picks/(?P<item_id>\d+)/$', UserPickDetailView.as_view(), name='user_pick'),
 
+    # route 동기화
+    url(r'^sync/$', SyncView.as_view(), name='sync'),
 
 ]

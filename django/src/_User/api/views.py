@@ -8,10 +8,13 @@ from rest_framework.views import APIView
 from rest_framework import status
 from .serializers import *
 
+#구글 지도 api 서버 request
+import requests
+
 # 다른 앱 import
 from django.apps import apps
 Item = apps.get_model('_Item', 'Item')
-
+Distance = apps.get_model('_Item','Distance')
 
 class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = 'id'
@@ -142,3 +145,43 @@ class UserPickDetailView(APIView):
 
         else:
             return Response({'is_pick': False})
+
+
+class SyncView(APIView) :
+    def get(self, request):
+        dur = []
+        item_cnt = Item.objects.count()
+        print(item_cnt)
+        for i in range(item_cnt):
+            item_src = Item.objects.get(id=i+1)
+
+            for j in range(item_cnt):
+                item_dst = Item.objects.get(id=j+1)
+                geo_src = item_src.latitude + ',' + item_src.longitude
+                geo_dst = item_dst.latitude + ',' + item_dst.longitude
+                r = requests.get('https://maps.googleapis.com/maps/api/directions/json?origin=' + geo_src + '&destination=' + geo_dst + '&key=AIzaSyBWIwYJXjVrIz3-HmHMvfze4ncv0sQV7tY')
+
+                # duration 이 두 지점 간 거리를 초단위로 나타낸 것.
+                duration = r.json()["routes"][0]["legs"][0]["duration"]["value"]
+                dur.append(duration)
+
+                my_seri = {
+                    'src':item_src.id,
+                    'dst':item_dst.id,
+                    'distance':duration,
+                }
+                requests.post('http://localhost:8000/api/routes/', my_seri)
+
+        return Response(dur)
+    '''
+        item_src = Item.objects.get(id=4)
+        item_dst = Item.objects.get(id=3)
+
+        geo_src = item_src.latitude + ',' + item_src.longitude
+        geo_dst = item_dst.latitude + ',' + item_dst.longitude
+        r = requests.get('https://maps.googleapis.com/maps/api/directions/json?origin=' + geo_src + '&destination=' + geo_dst + '&key=AIzaSyBWIwYJXjVrIz3-HmHMvfze4ncv0sQV7tY')
+
+
+        # duration 이 두 지점 간 거리를 초단위로 나타낸 것.
+        duration = r.json()["routes"][0]["legs"][0]["duration"]["value"]'''
+        # return Response(item_src.title +" to " + item_dst.title + "(unit seconds) : " + str(duration))

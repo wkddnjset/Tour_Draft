@@ -39,3 +39,14 @@ class Item_Tag(models.Model):
     def __str__(self):
         return str(self.id)
 
+
+class Distance(models.Model):
+    class Meta:
+        unique_together = (('src','dst'),)
+
+    src = models.ForeignKey(Item, on_delete=models.CASCADE, related_name = "src")
+    dst = models.ForeignKey(Item, on_delete=models.CASCADE, related_name = "dst")
+    distance = models.IntegerField()
+
+    def __str__(self):
+        return str(self.distance)

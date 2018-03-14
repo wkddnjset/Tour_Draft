@@ -11,6 +11,11 @@ class TagAdmin(admin.ModelAdmin):
 class Item_TagAdmin(admin.ModelAdmin):
     list_display = ('id', 'item_id', 'tag_id')
 
+class DistanceAdmin(admin.ModelAdmin):
+    list_display = ('id', 'src', 'dst', 'distance')
+
+
 admin.site.register(Item, ItemAdmin)
 admin.site.register(Tag, TagAdmin)
 admin.site.register(Item_Tag, Item_TagAdmin)
+admin.site.register(Distance, DistanceAdmin)

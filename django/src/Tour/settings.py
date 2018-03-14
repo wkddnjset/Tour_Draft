@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     '_Plan',
     '_User',
     'rest_framework',
+    'requests',
 
     # for CORS ERROR edited by jy
     'corsheaders',

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from _Item.models import Item
+from _Item.models import Item, Distance
 
 class ItemListSerializers(serializers.ModelSerializer):
     category_id = serializers.StringRelatedField()
@@ -27,3 +27,28 @@ class ItemListSerializers(serializers.ModelSerializer):
             'open_time',
             'close_time',
         ]
+
+
+class DistanceSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Distance
+        fields = [
+            'id',
+            'src',
+            'dst',
+            'distance',
+        ]
+
+    def create(self, validated_data):
+        src = validated_data['src']
+        dst = validated_data['dst']
+        distance = validated_data['distance']
+
+        distance_obj = Distance(
+            src=src,
+            dst=dst,
+            distance=distance,
+        )
+
+        distance_obj.save()
+        return validated_data
