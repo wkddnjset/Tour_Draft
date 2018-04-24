@@ -24,4 +24,5 @@
 3. Try Django 1.11 [[Youtube](https://www.youtube.com/watch?v=yDv5FIAeyoY&t=15014s)]
 3. Django rest API [[Youtube](https://www.youtube.com/watch?v=tG6O8YF91HE&t=1960s)]
 4. Sketch [[Youtube](https://www.youtube.com/watch?v=AV2OkzIGykA&list=PLLnpHn493BHE6UIsdKYlS5zu-ZYvx22CS)]
+...
 dkasdm
